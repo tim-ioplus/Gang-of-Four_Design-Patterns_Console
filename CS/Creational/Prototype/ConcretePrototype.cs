@@ -23,7 +23,7 @@ public class ConcretePrototype : IPrototype
 		return "public Name: " + Name + " - public Number: " + Number + " - private guid: " + guid;
 	}
 
-	public Object Clone()
+	public IPrototype Clone()
 	{
 		return (IPrototype)this.MemberwiseClone();
 	}
