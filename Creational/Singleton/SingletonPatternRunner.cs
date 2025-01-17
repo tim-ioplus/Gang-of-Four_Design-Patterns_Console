@@ -16,10 +16,10 @@ namespace Pattern.Creational.Singleton
 			Console.WriteLine("s1: " + s1.ToString());
 			s1.WriteFile("my/path/to/file");
 
-			
 			var s2 = IamSingleton.getInstance();
 			Console.WriteLine("s2: " + s2.ToString());
 			s2.WriteFile("my/path/to/file");
 		}
 	}
 }
+   

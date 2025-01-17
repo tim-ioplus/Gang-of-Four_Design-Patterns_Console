@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pattern.Behavioural.NewFolder
+namespace Pattern.Behavioural.Command
 {
 	internal static class CommandPatternRunner
 	{

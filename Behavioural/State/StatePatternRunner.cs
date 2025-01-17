@@ -49,7 +49,7 @@ namespace Pattern.Behavioural.State
 
 			public bool Pay(Invoice invoice)
 			{
-				Console.WriteLine("Invoice paid.");
+				Console.WriteLine("Pay Invoice.");
 				return true;
 			}
 

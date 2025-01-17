@@ -11,16 +11,11 @@ namespace Pattern.Behavioural.ChainOfResponsibility
 		internal static void Run()
 		{
 			Console.WriteLine("Chain of Repsonsibility");
-			var consoleLogger = new ConsoleLogger();
-			var fileLogger = new FileLogger();
-			var emailLogger = new EmailLogger();
-
-			fileLogger.Next = emailLogger;
-			consoleLogger.Next = fileLogger;
-			
-			consoleLogger.Handle(LogLevel.Info, "Objekt 4711 wurde geladen.");
-			consoleLogger.Handle(LogLevel.Warn, "Objekt 4711 wurde verändert.");
-			consoleLogger.Handle(LogLevel.Error, "Objekt 4711 konnte nicht gespeichert werden.");
+			var myLogger = new MyLogger();
+						
+			myLogger.Handle(LogLevel.Info, "Objekt 4711 wurde geladen.");
+			myLogger.Handle(LogLevel.Warn, "Objekt 4711 wurde verändert.");
+			myLogger.Handle(LogLevel.Error, "Objekt 4711 konnte nicht gespeichert werden.");
 		}
 
 		internal enum LogLevel { Info, Warn, Error }
@@ -31,6 +26,24 @@ namespace Pattern.Behavioural.ChainOfResponsibility
 			ILogger? Next{get; set; }
 		}
 
+		class MyLogger : ILogger 
+		{
+			public ILogger? Next { get; set; }
+			public MyLogger() 
+			{
+			}
+
+			public void Handle(LogLevel loglevel, string message)
+			{
+				if(Next == null)
+				{
+					Next = new ConsoleLogger();
+				}
+
+				Next?.Handle(loglevel, message);
+			}
+		}
+
 		class ConsoleLogger : ILogger
 		{
 			public ILogger? Next { get; set; }
@@ -38,6 +51,11 @@ namespace Pattern.Behavioural.ChainOfResponsibility
 			
 			public void Handle(LogLevel loglevel, string message)
 			{
+				if(Next == null)
+				{
+					Next = new FileLogger();
+				}
+
 				if(loglevel == LogLevel.Info)
 				{
 					Console.WriteLine("Console Log:" + loglevel + " : " + message);
@@ -56,6 +74,11 @@ namespace Pattern.Behavioural.ChainOfResponsibility
 
 			public void Handle(LogLevel loglevel, string message)
 			{
+				if(Next == null)
+				{
+					Next = new EmailLogger();
+				}
+
 				if(loglevel == LogLevel.Warn)
 				{
 					Console.WriteLine("File Log:" + loglevel + " : " + message);

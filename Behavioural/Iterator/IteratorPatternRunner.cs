@@ -28,10 +28,10 @@ namespace Pattern.Behavioural.Iterator
 			}
 
 			Console.WriteLine("Collection iterator");
-			var collectioniterator = new CollectionIterator();
-			while(collectioniterator.HasNext())
+			var monthiterator = new MonthIterator();
+			while(monthiterator.HasNext())
 			{
-				Console.WriteLine(collectioniterator.Next());
+				Console.WriteLine(monthiterator.Next());
 			}
 
 
@@ -48,7 +48,7 @@ namespace Pattern.Behavioural.Iterator
 			string Next();
 		}
 
-		public class CollectionIterator : ICollectionIterator
+		public class MonthIterator : ICollectionIterator
 		{
 			public int Index = 0;
 			public List<string> Values = new List<string>()

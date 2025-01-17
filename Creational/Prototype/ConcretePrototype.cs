@@ -3,7 +3,6 @@ public class ConcretePrototype : IPrototype
 {
 	public string Name { get; set; }
 	public int Number	{ get; set; }
-
 	private Guid guid { get; set; }
 
 	public ConcretePrototype(string name, int number)
