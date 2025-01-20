@@ -1,4 +1,14 @@
-﻿Public Class PrototypePatternRunner
+﻿'
+' 1.3 Prototype
+'
+' Von einem zu kopierenden Objekt kann nicht immer auf alle
+' Eigenschaften zugegriffen werden, zb weil sie private sind. Daher Kopiervorgang im Objekt selbst durchführen.
+' Neben dem normalen Konstruktur mit Method Overloading einen weiteren Konstruktur erstellen
+' der das Objekt selbst annimmt und in das neue Objekt die Werte des übergebenden Objekts schreibt
+' Für häufig kopierte Objekt kann eine PrototypeRegistry angelegt werden, die Objekte zwischenspeichert und
+' auf Anfrage einen Klon erstellt und ausgibt.
+' 
+Public Class PrototypePatternRunner
 	Public Sub New()
 	End Sub
 

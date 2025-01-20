@@ -69,6 +69,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Creational\Builder\BuilderPatternRunner.vb" />
     <Compile Include="Creational\Factory\Factory.vb" />
     <Compile Include="Creational\Factory\FactoryPatternRunner.vb" />
     <Compile Include="Creational\Factory\IProduct.vb" />

@@ -25,7 +25,7 @@
 	public void Show(ILandingPageBuilder landingPageBuilder, int count)
 	{
 		var currentPage = landingPageBuilder.GetLandingPage();
-		Console.WriteLine("--" + " Build Page: " + count + "---");
+		Console.WriteLine("--" + " Show Page: " + count + "---");
 		Console.WriteLine(currentPage.ToString());
 	}
 }

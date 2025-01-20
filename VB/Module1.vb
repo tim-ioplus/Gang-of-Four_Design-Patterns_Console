@@ -13,6 +13,9 @@ Module Module1
 		Dim prototypePatternRunner As New PrototypePatternRunner()
 		prototypePatternRunner.Run()
 
+		Dim builderPatternRunner As New BuilderPatternRunner()
+		builderPatternRunner.Run()
+
 		Console.WriteLine("exit in 10 secs")
 		Thread.Sleep(10000)
 
