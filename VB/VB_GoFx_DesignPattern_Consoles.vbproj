@@ -69,6 +69,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Behavioural\ChainOfResponsibility\ChainOfResponsibilityPatternRunner.vb" />
+    <Compile Include="Behavioural\ChainOfResponsibility\ConsoleLogger.vb" />
+    <Compile Include="Behavioural\ChainOfResponsibility\EMailLogger.vb" />
+    <Compile Include="Behavioural\ChainOfResponsibility\FileLogger.vb" />
+    <Compile Include="Behavioural\ChainOfResponsibility\IMyLogger.vb" />
+    <Compile Include="Behavioural\ChainOfResponsibility\MyLogger.vb" />
+    <Compile Include="Behavioural\ChainOfResponsibility\MyLogLevel.vb" />
     <Compile Include="Creational\Builder\BuilderPatternRunner.vb" />
     <Compile Include="Creational\Factory\Factory.vb" />
     <Compile Include="Creational\Factory\FactoryPatternRunner.vb" />

@@ -18,27 +18,67 @@
 			End If
 		Next
 
-		For Each builder As IPageBuilder In builders
-			builder.BuildHeader()
-			builder.BuildContent()
-			builder.BuildFooter()
-		Next
+		Dim pageDirector As New PageDirector()
+		pageDirector.Build(builders)
+		pageDirector.Show(builders)
 
-		For Each builder As IPageBuilder In builders
-			Dim pageText = builder.GetResult()
-			If pageText IsNot Nothing Then
-				Console.WriteLine(pageText)
-			Else
-				Console.WriteLine("No page text")
-			End If
-
-		Next
 
 		Console.WriteLine("Builder />")
 	End Function
 
 End Class
 
+Public Class Page
+	Public Property Header As String
+	Public Property Content As String
+	Public Property Footer As String
+
+	Public Sub New()
+		Header = ""
+		Content = ""
+		Footer = ""
+	End Sub
+
+	Public Overrides Function ToString() As String
+		Return Header + " - " + Content + " - " + Footer
+	End Function
+
+End Class
+
+Public Class PageDirector
+
+	Public Sub New()
+	End Sub
+
+	Public Function Build(builders As List(Of IPageBuilder))
+		For Each builder As IPageBuilder In builders
+			Me._build(builder)
+		Next
+	End Function
+
+	Private Function _build(builder As IPageBuilder)
+		builder.BuildHeader()
+		builder.BuildContent()
+		builder.BuildFooter()
+	End Function
+
+	Public Function Show(builders As List(Of IPageBuilder))
+		For Each builder As IPageBuilder In builders
+			show(builder)
+		Next
+	End Function
+
+	Private Function show(builder As IPageBuilder)
+		Dim pageText = builder.GetResult()
+		If pageText IsNot Nothing Then
+			Console.WriteLine(pageText)
+		Else
+			Console.WriteLine("No page text")
+		End If
+	End Function
+
+
+End Class
 Public Interface IPageBuilder
 	Function BuildHeader()
 	Function BuildContent()
