@@ -76,6 +76,11 @@
     <Compile Include="Behavioural\ChainOfResponsibility\IMyLogger.vb" />
     <Compile Include="Behavioural\ChainOfResponsibility\MyLogger.vb" />
     <Compile Include="Behavioural\ChainOfResponsibility\MyLogLevel.vb" />
+    <Compile Include="Behavioural\Strategy\ExtractTextNegativeStrategy.vb" />
+    <Compile Include="Behavioural\Strategy\ExtractTextPositiveStrategy.vb" />
+    <Compile Include="Behavioural\Strategy\IStrategy.vb" />
+    <Compile Include="Behavioural\Strategy\StrategyBase.vb" />
+    <Compile Include="Behavioural\Strategy\StrategyPatternRunner.vb" />
     <Compile Include="Creational\Builder\BuilderPatternRunner.vb" />
     <Compile Include="Creational\Factory\Factory.vb" />
     <Compile Include="Creational\Factory\FactoryPatternRunner.vb" />

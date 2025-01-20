@@ -4,6 +4,8 @@ Module Module1
 
 	Sub Main()
 
+		'1. Strukturmuster
+
 		'Dim singletonPatternRunner As New SingletonPatternRunner()
 		'singletonPatternRunner.Run()
 
@@ -16,8 +18,14 @@ Module Module1
 		'Dim builderPatternRunner As New BuilderPatternRunner()
 		'builderPatternRunner.Run()
 
-		Dim chainOfResponsibilityPatternRunner As New ChainOfResponsibilityPatternRunner()
-		chainOfResponsibilityPatternRunner.Run()
+		' 3. Verhaltensmuster 
+
+		'Dim chainOfResponsibilityPatternRunner As New ChainOfResponsibilityPatternRunner()
+		'chainOfResponsibilityPatternRunner.Run()
+
+		' 3.x Strategy
+		Dim strategyPatternRunner As New StrategyPatternRunner()
+		strategyPatternRunner.Run()
 
 		Console.WriteLine("exit in 10 secs")
 		Thread.Sleep(10000)

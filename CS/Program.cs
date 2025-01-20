@@ -41,7 +41,7 @@ using Pattern.Behavioural.Command;
 //goto proxy;
 //goto flyweight;
 //goto facade;
-goto decorator;
+//goto decorator;
 //goto composite;
 //goto bridge;
 //goto adapter;
@@ -52,7 +52,7 @@ goto decorator;
 //goto memento;
 //goto observer;
 //goto state;
-//goto strategy;
+goto strategy;
 //goto templatemethod;
 //goto visitor;
 
@@ -299,6 +299,7 @@ StatePatternRunner.Run();
 strategy:
 StrategyPatternRunner.Run();
 
+goto endof;
 
 //
 // 3.9 Template Method
