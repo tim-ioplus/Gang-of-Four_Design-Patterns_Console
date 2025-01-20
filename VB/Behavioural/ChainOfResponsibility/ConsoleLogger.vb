@@ -5,7 +5,7 @@
 
 	Public Sub New()
 	End Sub
-	Public Function Handle(level As MyLogLevel, message As String) Implements IMyLogger.Handle
+	Friend Sub Handle(level As MyLogLevel, message As String) Implements IMyLogger.Handle
 		If level = MyLogLevel.Info Then
 			Console.WriteLine("Console - Info: " + message)
 		Else
@@ -16,5 +16,5 @@
 			NextLogger.Handle(level, message)
 
 		End If
-	End Function
+	End Sub
 End Class
