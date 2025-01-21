@@ -24,8 +24,17 @@ Module Module1
 		'chainOfResponsibilityPatternRunner.Run()
 
 		' 3.x Strategy
-		Dim strategyPatternRunner As New StrategyPatternRunner()
-		strategyPatternRunner.Run()
+		'Dim strategyPatternRunner As New StrategyPatternRunner()
+		'strategyPatternRunner.Run()
+
+		'3.x Iterator
+		'Dim iteratorPatternRunner As New IteratorPatternRunner()
+		'iteratorPatternRunner.Run()
+
+		'3.x State 
+		Dim statePatternRunner As New StatePatternRunner()
+		statePatternRunner.Run()
+
 
 		Console.WriteLine("exit in 10 secs")
 		Thread.Sleep(10000)
