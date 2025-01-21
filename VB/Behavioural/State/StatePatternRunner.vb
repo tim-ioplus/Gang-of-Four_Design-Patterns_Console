@@ -33,9 +33,9 @@ Interface IInvoice
 
 End Interface
 Interface IPaymentState
-	Function Pay() As Boolean
-	Function Cancel() As Boolean
-	Function Refund() As Boolean
+	Function Pay(number As Integer) As Boolean
+	Function Cancel(number As Integer) As Boolean
+	Function Refund(number As Integer) As Boolean
 	Function ToString() As String
 End Interface
 
@@ -45,15 +45,18 @@ Friend Class UnpaidInvoiceState
 	Sub New()
 
 	End Sub
-	Public Function Pay() As Boolean Implements IPaymentState.Pay
+	Public Function Pay(number As Integer) As Boolean Implements IPaymentState.Pay
+		Console.WriteLine("Invoice Num: " + number.ToString() + " - " + "Pay")
 		Return True
 	End Function
 
-	Public Function Cancel() As Boolean Implements IPaymentState.Cancel
+	Public Function Cancel(number As Integer) As Boolean Implements IPaymentState.Cancel
+		Console.WriteLine("Invoice Num: " + number.ToString() + " - " + "Cancel")
 		Return True
 	End Function
 
-	Public Function Refund() As Boolean Implements IPaymentState.Refund
+	Public Function Refund(number As Integer) As Boolean Implements IPaymentState.Refund
+		Console.WriteLine("Invoice Num: " + number.ToString() + " - " + "Cant Refund")
 		Return False
 	End Function
 
@@ -68,15 +71,18 @@ Friend Class PaidInvoiceState
 	Sub New()
 
 	End Sub
-	Public Function Pay() As Boolean Implements IPaymentState.Pay
+	Public Function Pay(number As Integer) As Boolean Implements IPaymentState.Pay
+		Console.WriteLine("Invoice Num: " + number.ToString() + " - " + "Cant Pay")
 		Return False
 	End Function
 
-	Public Function Cancel() As Boolean Implements IPaymentState.Cancel
+	Public Function Cancel(number As Integer) As Boolean Implements IPaymentState.Cancel
+		Console.WriteLine("Invoice Num: " + number.ToString() + " - " + "Cant Cancel")
 		Return False
 	End Function
 
-	Public Function Refund() As Boolean Implements IPaymentState.Refund
+	Public Function Refund(number As Integer) As Boolean Implements IPaymentState.Refund
+		Console.WriteLine("Invoice Num: " + number.ToString() + " - " + "Refund")
 		Return True
 	End Function
 
@@ -92,15 +98,18 @@ Friend Class CancelledInvoiceState
 	Sub New()
 
 	End Sub
-	Public Function Pay() As Boolean Implements IPaymentState.Pay
+	Public Function Pay(number As Integer) As Boolean Implements IPaymentState.Pay
+		Console.WriteLine("Invoice Num: " + number.ToString() + " - " + "Cant Pay")
 		Return False
 	End Function
 
-	Public Function Cancel() As Boolean Implements IPaymentState.Cancel
+	Public Function Cancel(number As Integer) As Boolean Implements IPaymentState.Cancel
+		Console.WriteLine("Invoice Num: " + number.ToString() + " - " + "Cant Cancel")
 		Return False
 	End Function
 
-	Public Function Refund() As Boolean Implements IPaymentState.Refund
+	Public Function Refund(number As Integer) As Boolean Implements IPaymentState.Refund
+		Console.WriteLine("Invoice Num: " + number.ToString() + " - " + "Cant Refund")
 		Return False
 	End Function
 
@@ -115,15 +124,18 @@ Friend Class RefundedInvoiceState
 	Sub New()
 
 	End Sub
-	Public Function Pay() As Boolean Implements IPaymentState.Pay
+	Public Function Pay(number As Integer) As Boolean Implements IPaymentState.Pay
+		Console.WriteLine("Invoice Num: " + number.ToString() + " - " + "Cant Pay")
 		Return False
 	End Function
 
-	Public Function Cancel() As Boolean Implements IPaymentState.Cancel
+	Public Function Cancel(number As Integer) As Boolean Implements IPaymentState.Cancel
+		Console.WriteLine("Invoice Num: " + number.ToString() + " - " + "Cant Cancel")
 		Return False
 	End Function
 
-	Public Function Refund() As Boolean Implements IPaymentState.Refund
+	Public Function Refund(number As Integer) As Boolean Implements IPaymentState.Refund
+		Console.WriteLine("Invoice Num: " + number.ToString() + " - " + "Cant Refund")
 		Return False
 	End Function
 
@@ -147,28 +159,28 @@ Friend Class Invoice
 	End Sub
 
 	Public Sub Pay() Implements IInvoice.Pay
-		Dim result As Boolean = State.Pay()
+		Dim result As Boolean = State.Pay(Me.Number)
 		If result = True Then
 			State = New PaidInvoiceState()
-			Console.WriteLine("Invoice Num:" + Me.Number.ToString() + " : " + State.ToString())
+			Console.WriteLine("Invoice Num: " + Me.Number.ToString() + " - " + State.ToString())
 		End If
 
 	End Sub
 
 	Public Sub Cancel() Implements IInvoice.Cancel
-		Dim result As Boolean = State.Cancel()
+		Dim result As Boolean = State.Cancel(Me.Number)
 		If result = True Then
 			State = New CancelledInvoiceState()
-			Console.WriteLine("Invoice Num:" + Me.Number.ToString() + " : " + State.ToString())
+			Console.WriteLine("Invoice Num:" + Me.Number.ToString() + " - " + State.ToString())
 		End If
 
 	End Sub
 
 	Public Sub Refund() Implements IInvoice.Refund
-		Dim result As Boolean = State.Refund()
+		Dim result As Boolean = State.Refund(Me.Number)
 		If result = True Then
 			State = New CancelledInvoiceState()
-			Console.WriteLine("Invoice Num" + Me.Number.ToString() + " : " + State.ToString())
+			Console.WriteLine("Invoice Num:" + Me.Number.ToString() + " - " + State.ToString())
 		End If
 
 	End Sub
