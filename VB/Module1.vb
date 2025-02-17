@@ -52,11 +52,21 @@ Module Module1
 		'// - Grafikbearbeitung > Objekte, Pixel, Farbe
 		'//
 
-		Dim mementoPatternRunner = New MementoPatternRunner
-		mementoPatternRunner.Run()
+		'Dim mementoPatternRunner = New MementoPatternRunner
+		'mementoPatternRunner.Run()
 
 		'3. Observer
+		' 
+		' ein objekt kann anderen Objekten seine Veränderungen mitteilen diese können darauf reagieren.
+		' - Ereignisse in gui Elementen
+		' -- Workflow schritte wenn zb. die Oberflächen des nächsten (n+1)-ten Schritts von der Auswahl im aktuellen n-ten Schritt abhängen 
+		' - Publish und Subscribe Dienste 
+		' -- Handelsplatformen die auf ereignisse zb preisänderungen reagieren
+		' - Dienst um Fehlermeldungen einzusammeln und And die richtigen empfänger zu verteilen
+		'
 
+		Dim observerPatternRunner = New ObserverPatternRunner
+		observerPatternRunner.Run()
 
 		'3.x State 
 		'Dim statePatternRunner As New StatePatternRunner()

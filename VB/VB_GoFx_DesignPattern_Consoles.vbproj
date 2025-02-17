@@ -86,6 +86,7 @@
     <Compile Include="Behavioural\Iterator\IteratorPatternRunner.vb" />
     <Compile Include="Behavioural\Mediator\MediatorPatternRunner.vb" />
     <Compile Include="Behavioural\Memento\MementoPatternRunner.vb" />
+    <Compile Include="Behavioural\Observer\ObserverPatternRunner.vb" />
     <Compile Include="Behavioural\State\CancelledInvoiceState.vb" />
     <Compile Include="Behavioural\State\IInvoice.vb" />
     <Compile Include="Behavioural\State\Invoice.vb" />
