@@ -243,7 +243,7 @@ goto endof;
 // 3.4 Mediator 
 // 
 // Struktur um Objekte miteinander interagieren, kommunizieren zu lassen ohne sie direkt aufzurufen
-// - Kommunikation zwischen GUI Elemnten um Eingaben und Änderungen der Zustände zu kommunizieren
+// - Kommunikation zwischen GUI Elementen um Eingaben und Änderungen der Zustände zu kommunizieren
 // - Chatsysteme
 // 
 

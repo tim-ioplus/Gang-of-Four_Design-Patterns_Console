@@ -13,11 +13,11 @@ namespace Pattern.Behavioural.Memento
 			var textEditor = new TextEditor();
 			var history = new History();
 
-			textEditor.AddText("Der theoretisch Asatz für Entwurfsmuschter ");
+			textEditor.AddText("Der theoretische Ansatz für Entwurfsmuschter ");
 			history.Save(textEditor.Save());
-			textEditor.AddText("het er scho 1964 i Notes on the synthesis of form dargsteut. ");
+			textEditor.AddText("hat er schon 1964 in Notes on the synthesis of form dargstellt. ");
 			history.Save(textEditor.Save());
-			textEditor.AddText("23 Entwurfsmuschter beschribt u der Idee vom Entwurfsmuschter i der Softwareentwicklig zum Durchbruch het verhoufe");
+			textEditor.AddText("Seine beschreibung hat der Idee vom Entwurfsmuschter in der Softwareentwicklig zum Durchbruch het verhoufe");
 			history.Save(textEditor.Save());
 
 			textEditor.AddText("Loruem Ipseum");
@@ -27,7 +27,7 @@ namespace Pattern.Behavioural.Memento
 				Console.WriteLine(Environment.NewLine + "Tippfehler");
 			}
 
-			textEditor.Restore(history.Restore());
+			textEditor.Restore(history.Undo());
 			if(!textEditor.GetContent().Contains("Loruem Ipseum"))
 			{
 				Console.WriteLine(Environment.NewLine + "Tippfehler gelöscht");
@@ -93,7 +93,7 @@ namespace Pattern.Behavioural.Memento
 			history.Push(memento);
 		}
 
-		public Memento Restore()
+		public Memento Undo()
 		{
 			if(history.Count > 0)
 			{

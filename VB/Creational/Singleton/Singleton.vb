@@ -44,7 +44,7 @@ Friend Class Singleton
 
 
 	Public Function Destroy() As Boolean
-		If Not _instance Is Nothing Then
+		If _instance IsNot Nothing Then
 			_instance = Nothing
 			_instanceCount = 0
 			Return True
