@@ -132,9 +132,9 @@ AdapterPatternRunner.Run();
 //
 // 2.2 Bridge
 //
-// Die Objekt stellt Funktionen zur Verfügung indem es unterschiedliche Varianten eines anderen Objekts 
+// Ein Objekt stellt Funktionen zur Verfügung indem es unterschiedliche Varianten eines anderen Objekts 
 // aufnehmen kann auf das es angewiesen ist.
-// zb  beim Export oder Konvertieren unterschiedlicher Geschäftsobjekte in unterschiedliche Formate.
+// zb beim Export oder Konvertieren unterschiedlicher Geschäftsobjekte in unterschiedliche Formate.
 //
 
 bridge:

@@ -111,6 +111,7 @@
     <Compile Include="Creational\Singleton\SingletonPatternRunner.vb" />
     <Compile Include="Module1.vb" />
     <Compile Include="Structural\Adapter\AdapterPatternRunner.vb" />
+    <Compile Include="Structural\Bridge\BridgePatternRunner.vb" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

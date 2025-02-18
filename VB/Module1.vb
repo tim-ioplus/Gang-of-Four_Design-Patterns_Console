@@ -31,10 +31,20 @@ Module Module1
 		'// wie die Basisklasse.
 		'// 
 		'
-		Dim adapterPatternRunner = New AdapterPatternRunner
-		adapterPatternRunner.Run()
+		'Dim adapterPatternRunner = New AdapterPatternRunner
+		'adapterPatternRunner.Run()
 
 		'2.2 Bridge
+		'//
+		'// 2.2 Bridge
+		'//
+		'// Ein Objekt stellt Funktionen zur Verfügung indem es unterschiedliche Varianten eines anderen Objekts 
+		'// aufnehmen kann auf das es angewiesen ist.
+		'// zb beim Export oder Konvertieren unterschiedlicher Geschäftsobjekte in unterschiedliche Formate.
+		'//
+		'
+		Dim bridgePatternRunner = New BridgePatternRunner
+		bridgePatternRunner.Run()
 
 		'2.3 Composite
 
@@ -101,13 +111,13 @@ Module Module1
 		' 3.9 Template
 
 
-		' 3.10 Visotor
+		' 3.10 Visitor
 
 
 		'
 		'
 		'
-		Dim secs As Integer = 10000
+		Dim secs As Integer = 15000
 		Console.WriteLine($"exit in {secs / 1000} secs")
 		Thread.Sleep(secs)
 
