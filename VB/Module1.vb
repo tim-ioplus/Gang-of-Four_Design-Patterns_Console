@@ -58,7 +58,15 @@ Module Module1
 		compositePatternRunner.Run()
 
 
-		'2.4 Decorator
+		'2.4 Decorator		
+		'//
+		'// 2.4 Decorator
+		'// Ermöglicht das Verhalten eines Objekts zu verändern ohne die ursprüngliche Implementieurng zu ändern
+		'// Ermöglicht weiteres Verhalten um die Kernfunktion "herum-zu-wrappen", zB:
+		'// 1. [Api aufrufen] => 2. [[Api aufrufen], [Ergebnis Loggen]] => 3. [[Api Aufrufen], [Laufzeit loggen]]
+		'//
+		Dim decoratorpatternRunner = New DecoratorPatternRunner
+		decoratorpatternRunner.Run()
 
 		'
 		' 3. Verhaltensmuster 
