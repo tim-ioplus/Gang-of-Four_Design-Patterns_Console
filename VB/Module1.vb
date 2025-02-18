@@ -43,10 +43,20 @@ Module Module1
 		'// zb beim Export oder Konvertieren unterschiedlicher Geschäftsobjekte in unterschiedliche Formate.
 		'//
 		'
-		Dim bridgePatternRunner = New BridgePatternRunner
-		bridgePatternRunner.Run()
+		'Dim bridgePatternRunner = New BridgePatternRunner
+		'bridgePatternRunner.Run()
 
 		'2.3 Composite
+		'//
+		'// 2.3 Composite
+		'// 
+		'// Ermöglicht eine Menge von Einzelobjekten und deren Untermenge gleich zu behandeln um so gemeinsame Eigenschaften
+		'// leichter und übersichtlicher zu verarbeiten
+		'// zb. unterschiedliche einzelne Bauteile eines Produktes
+		'
+		Dim compositePatternRunner = New CompositePatternRunner
+		compositePatternRunner.Run()
+
 
 		'2.4 Decorator
 

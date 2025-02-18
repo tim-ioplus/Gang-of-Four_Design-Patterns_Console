@@ -112,6 +112,7 @@
     <Compile Include="Module1.vb" />
     <Compile Include="Structural\Adapter\AdapterPatternRunner.vb" />
     <Compile Include="Structural\Bridge\BridgePatternRunner.vb" />
+    <Compile Include="Structural\Composite\CompositePatternRunner.vb" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
