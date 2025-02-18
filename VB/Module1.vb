@@ -54,8 +54,8 @@ Module Module1
 		'// leichter und übersichtlicher zu verarbeiten
 		'// zb. unterschiedliche einzelne Bauteile eines Produktes
 		'
-		Dim compositePatternRunner = New CompositePatternRunner
-		compositePatternRunner.Run()
+		'Dim compositePatternRunner = New CompositePatternRunner
+		'compositePatternRunner.Run()
 
 
 		'2.4 Decorator		
@@ -65,8 +65,24 @@ Module Module1
 		'// Ermöglicht weiteres Verhalten um die Kernfunktion "herum-zu-wrappen", zB:
 		'// 1. [Api aufrufen] => 2. [[Api aufrufen], [Ergebnis Loggen]] => 3. [[Api Aufrufen], [Laufzeit loggen]]
 		'//
-		Dim decoratorpatternRunner = New DecoratorPatternRunner
-		decoratorpatternRunner.Run()
+		'Dim decoratorpatternRunner = New DecoratorPatternRunner
+		'decoratorpatternRunner.Run()
+
+		'2.5 Facade
+		'//
+		'// 2.5 Facade
+		'// ermöglicht ein Subsystem zu definieren mit klar abgegrenzten Verantwortlichkeiten und Schnittstellen.
+		'// Abhängigkeiten können dann innerhalb des Subsystems weggekapselt werden ohne
+		'// das der aufrufende Code (Client) darauf achten müsste.
+		'// zB. um redundante oder mehrfach Datenhaltung abzukapseln
+		'//
+		Dim facadePatternRunner = New FacadePatternRunner
+		facadePatternRunner.Run()
+
+
+		'Flyweight
+		'Proxy
+
 
 		'
 		' 3. Verhaltensmuster 
