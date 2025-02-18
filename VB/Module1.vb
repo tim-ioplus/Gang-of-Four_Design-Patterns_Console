@@ -4,7 +4,8 @@ Module Module1
 
 	Sub Main()
 
-		'1. Strukturmuster
+		'
+		'1. Erzeugungsmuster
 
 		'Dim singletonPatternRunner As New SingletonPatternRunner()
 		'singletonPatternRunner.Run()
@@ -18,6 +19,28 @@ Module Module1
 		'Dim builderPatternRunner As New BuilderPatternRunner()
 		'builderPatternRunner.Run()
 
+		'
+		'2. Strukturmuster
+
+		'//
+		'// 2.1 Adapter Pattern
+		'//
+		'// Möglichkeit um neue Funktionen an bestehende Abhängigkeiten zu implementieren und im client code weiterhin
+		'// die alte Klasse zu verwenden.
+		'// Die Adapterklasse leitet sich von Basisklasse *und* einem neuem Interface ab und stellt gleiche Api zur Verfügung
+		'// wie die Basisklasse.
+		'// 
+		'
+		Dim adapterPatternRunner = New AdapterPatternRunner
+		adapterPatternRunner.Run()
+
+		'2.2 Bridge
+
+		'2.3 Composite
+
+		'2.4 Decorator
+
+		'
 		' 3. Verhaltensmuster 
 
 		'Dim chainOfResponsibilityPatternRunner As New ChainOfResponsibilityPatternRunner()
@@ -55,7 +78,7 @@ Module Module1
 		'Dim mementoPatternRunner = New MementoPatternRunner
 		'mementoPatternRunner.Run()
 
-		'3. Observer
+		'3.6 Observer
 		' 
 		' ein objekt kann anderen Objekten seine Veränderungen mitteilen diese können darauf reagieren.
 		' - Ereignisse in gui Elementen
@@ -64,20 +87,27 @@ Module Module1
 		' -- Handelsplatformen die auf ereignisse zb preisänderungen reagieren
 		' - Dienst um Fehlermeldungen einzusammeln und And die richtigen empfänger zu verteilen
 		'
+		'Dim observerPatternRunner = New ObserverPatternRunner
+		'observerPatternRunner.Run()
 
-		Dim observerPatternRunner = New ObserverPatternRunner
-		observerPatternRunner.Run()
-
-		'3.x State 
+		'3.7 State 
 		'Dim statePatternRunner As New StatePatternRunner()
 		'StatePatternRunner.Run()
 
-		' 3.x Strategy
+		' 3.8 Strategy
 		'Dim strategyPatternRunner As New StrategyPatternRunner()
 		'strategyPatternRunner.Run()
 
+		' 3.9 Template
 
-		Dim secs As Integer = 5000
+
+		' 3.10 Visotor
+
+
+		'
+		'
+		'
+		Dim secs As Integer = 10000
 		Console.WriteLine($"exit in {secs / 1000} secs")
 		Thread.Sleep(secs)
 

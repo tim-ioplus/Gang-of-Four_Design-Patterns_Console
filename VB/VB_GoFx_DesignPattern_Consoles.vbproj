@@ -110,6 +110,7 @@
     <Compile Include="Creational\Singleton\Singleton.vb" />
     <Compile Include="Creational\Singleton\SingletonPatternRunner.vb" />
     <Compile Include="Module1.vb" />
+    <Compile Include="Structural\Adapter\AdapterPatternRunner.vb" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
