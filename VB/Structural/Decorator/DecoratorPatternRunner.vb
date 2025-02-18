@@ -7,65 +7,67 @@ Public Class DecoratorPatternRunner
 		Dim postServiceLogging = New PostServiceLoggingDecorator(postService)
 		Dim postServiceMeasuring = New PostServiceMeasuringDecorator(postService)
 
-		postServiceLogging.GetPost(11)
-		postServiceMeasuring.GetPost(111)
+		postServiceLogging.GetPost(0)
+		postServiceMeasuring.GetPost(1)
 
 	End Sub
-End Class
 
 
 
-Public Interface IPostService
-	Function GetPost(postId As Integer) As String
-End Interface
 
-Public Class PostService
-	Implements IPostService
+	Public Interface IPostService
+		Function GetPost(postId As Integer) As String
+	End Interface
 
-	Private _posts As New List(Of String) From
+	Public Class PostService
+		Implements IPostService
+
+		Private _posts As New List(Of String) From
 		{"Post 1 über Sport", "Post 2 über Politik"}
-	Public Function GetPost(postId As Integer) As String Implements IPostService.GetPost
-		Dim timeToSleep = Math.Floor(50 * New Random().Next(1, 20))
-		Thread.Sleep(Integer.Parse(timeToSleep))
+		Public Function GetPost(postId As Integer) As String Implements IPostService.GetPost
+			Dim timeToSleep = Math.Floor(50 * New Random().Next(1, 20))
+			Thread.Sleep(Integer.Parse(timeToSleep))
 
-		Dim post = _posts.ElementAt(New Random().Next(0, 1))
+			Dim post = _posts.ElementAt(postId)
+			'Console.WriteLine("Getting post {0} : {1} ", postId, post)
+			Return post
+		End Function
+	End Class
 
-		Return post
-	End Function
-End Class
+	Public Class PostServiceLoggingDecorator
+		Implements IPostService
 
-Public Class PostServiceLoggingDecorator
-	Implements IPostService
+		Private _postService As IPostService
+		Public Sub New(postService As PostService)
+			_postService = postService
+		End Sub
 
-	Private _postService As IPostService
-	Public Sub New(postService As PostService)
-		_postService = postService
-	End Sub
+		Public Function GetPost(postId As Integer) As String Implements IPostService.GetPost
+			Console.WriteLine("Logging post")
+			Dim post = _postService.GetPost(postId)
+			Console.WriteLine("Post {0}", post)
 
-	Public Function GetPost(postId As Integer) As String Implements IPostService.GetPost
-		Console.WriteLine("Logging post")
-		Dim post = _postService.GetPost(postId)
-		Console.WriteLine("Post {0}", post)
+		End Function
+	End Class
 
-	End Function
-End Class
+	Friend Class PostServiceMeasuringDecorator
+		Implements IPostService
+		Private _postService As PostService
 
-Friend Class PostServiceMeasuringDecorator
-	Implements IPostService
-	Private _postService As PostService
+		Public Sub New(postService As PostService)
+			Me._postService = postService
+		End Sub
 
-	Public Sub New(postService As PostService)
-		Me._postService = postService
-	End Sub
+		Public Function GetPost(postId As Integer) As String Implements IPostService.GetPost
+			Dim watch As Stopwatch = Stopwatch.StartNew
+			Console.WriteLine("Measuring Post")
+			Dim post = _postService.GetPost(postId)
+			watch.Stop()
 
-	Public Function GetPost(postId As Integer) As String Implements IPostService.GetPost
-		Dim watch As Stopwatch = Stopwatch.StartNew
-		Console.WriteLine("Measuring Post")
-		Dim post = _postService.GetPost(postId)
-		watch.Stop()
+			Dim elapsed = watch.ElapsedMilliseconds / 1000
+			Console.WriteLine("Time {0} sec", elapsed)
 
-		Dim elapsed = watch.ElapsedMilliseconds / 1000
-		Console.WriteLine("Time {0} sec", elapsed)
-
-	End Function
+		End Function
+	End Class
+	'
 End Class

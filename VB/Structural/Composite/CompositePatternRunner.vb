@@ -41,47 +41,48 @@
 		Console.WriteLine("Auto kostet {0} EUR", totalCost)
 
 	End Sub
+
+
+	Private Interface IComposite
+		Function GetCost() As Decimal
+	End Interface
+
+	Private Class Composite
+		Implements IComposite
+
+		Public Name As String
+		Private _amount As Integer
+		Private _cost As Decimal
+
+		Public Sub New(name As String, amount As Integer, cost As Decimal)
+			Me.Name = name
+			_amount = amount
+			_cost = cost
+		End Sub
+		Public Function GetCost() As Decimal Implements IComposite.GetCost
+			Return _amount * _cost
+		End Function
+	End Class
+
+	Private Class Assembly
+		Implements IComposite
+
+		Public Name As String
+		Private _components As List(Of Composite)
+
+		Public Sub New(name As String, components As List(Of Composite))
+			Me.Name = name
+			_components = components
+		End Sub
+		Public Function GetCost() As Decimal Implements IComposite.GetCost
+			Dim sum As Decimal = 0
+
+			For Each comp In _components
+				sum += comp.GetCost
+			Next
+
+			Return sum
+		End Function
+	End Class
+
 End Class
-
-Public Interface IComposite
-	Function GetCost() As Decimal
-End Interface
-
-Public Class Composite
-	Implements IComposite
-
-	Public Name As String
-	Private _amount As Integer
-	Private _cost As Decimal
-
-	Public Sub New(name As String, amount As Integer, cost As Decimal)
-		Me.Name = name
-		_amount = amount
-		_cost = cost
-	End Sub
-	Public Function GetCost() As Decimal Implements IComposite.GetCost
-		Return _amount * _cost
-	End Function
-End Class
-
-Public Class Assembly
-	Implements IComposite
-
-	Public Name As String
-	Private _components As List(Of Composite)
-
-	Public Sub New(name As String, components As List(Of Composite))
-		Me.Name = name
-		_components = components
-	End Sub
-	Public Function GetCost() As Decimal Implements IComposite.GetCost
-		Dim sum As Decimal = 0
-
-		For Each comp In _components
-			sum += comp.GetCost
-		Next
-
-		Return sum
-	End Function
-End Class
-
