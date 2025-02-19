@@ -6,7 +6,7 @@ Module Module1
 	Sub Main()
 
 		' Erzeugungsmuster
-		GoTo _11singleton
+		'GoTo _11singleton
 		'GoTo _12factory
 		'GoTo _13prototype
 		'GoTo _14builder
@@ -30,7 +30,6 @@ Module Module1
 		'GoTo _37state
 		'GoTo _38strategy
 		'GoTo _39template
-		'GoTo _310visitor
 
 		'
 		'1. Erzeugungsmuster
@@ -142,11 +141,6 @@ _38strategy:
 _39template:
 		Dim templatePatternRunner As New TemplatePatternRunner()
 		templatePatternRunner.Run()
-		GoTo endoffile
-
-_310visitor:
-		Dim visitorPatternRunner As New VisitorPatternRunner()
-		visitorPatternRunner.Run()
 		GoTo endoffile
 
 
