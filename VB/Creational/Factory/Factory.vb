@@ -19,8 +19,8 @@ Friend Class ProductA
 	Public Sub New()
 	End Sub
 
-	Public Shadows Function ToString() As String
-		Return "I am Product A"
+	Public Overrides Function ToString() As String
+		Return "A"
 	End Function
 End Class
 
@@ -30,8 +30,8 @@ Friend Class ProductB
 	Public Sub New()
 	End Sub
 
-	Public Shadows Function ToString() As String
-		Return "I am Product B"
+	Public Overrides Function ToString() As String
+		Return "B"
 	End Function
 End Class
 
