@@ -1,5 +1,5 @@
 ﻿Friend Interface IStrategy
 	Sub Execute()
-	Function GetOutout() As String
+	Function GetOutput() As String
 	Property Name As String
 End Interface

@@ -24,7 +24,7 @@
 
 	Friend MustOverride Sub Execute() Implements IStrategy.Execute
 
-	Friend Function GetOutout() As String Implements IStrategy.GetOutout
+	Friend Function GetOutput() As String Implements IStrategy.GetOutput
 		Return _output
 	End Function
 End Class
