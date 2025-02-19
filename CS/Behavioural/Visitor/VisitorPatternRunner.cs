@@ -12,29 +12,28 @@ namespace Pattern.Behavioural.Visitor
 		{
 			Console.WriteLine("Visitor Pattern Runner ..");
 
-			var jj = new SalesEmployee("Justus Jonas", 100000, 27500);
-			var ps = new SalesEmployee("Peter Shaw", 70000, 23250);
-			var ba = new BackOfficeEmployee("Bob Andrews", 75000, 21275);
+			var employeeJJ = new SalesEmployee("Justus Jonas", 100000, 27500);
+			var employeePS = new SalesEmployee("Peter Shaw", 70000, 23250);
+			var employeeBA = new BackOfficeEmployee("Bob Andrews", 75000, 21275);
 			
-			var list = new List<IVisitableElement>(){ jj,ps,ba };
+			var specialEmployeeList = new List<IVisitableElement>(){ employeeJJ, employeePS, employeeBA };
 			
 			var totalCompensationVisitor = new CompensationVisitor();
 			
-			foreach (var p in list) 
+			foreach (var specialEmployee in specialEmployeeList) 
 			{
-				p.Accept(totalCompensationVisitor);
+				specialEmployee.Accept(totalCompensationVisitor);
 				
-				var pe = (Employee) p;
-				if(pe!= null)
+				var baseEmployee = (Employee) specialEmployee;
+				if(baseEmployee!= null)
 				{
-					var peCompensationVisitor = new CompensationVisitor();
-					p.Accept(peCompensationVisitor);
-					Console.WriteLine("Compensation for " + pe.Name + " is " + peCompensationVisitor.TotalCompensation);
-				}
-				
+					var specialEmployeeCompensationVisitor = new CompensationVisitor();
+					specialEmployee.Accept(specialEmployeeCompensationVisitor);
+					Console.WriteLine("Compensation for " + baseEmployee.Name + " is " + specialEmployeeCompensationVisitor.TotalCompensation);
+				}				
 			}
 
-			Console.WriteLine("Total Compensation for " + jj.Name + ", " + ps.Name + ", " + ba.Name + " is " + totalCompensationVisitor.TotalCompensation);
+			Console.WriteLine("Total Compensation for " + employeeJJ.Name + ", " + employeePS.Name + ", " + employeeBA.Name + " is " + totalCompensationVisitor.TotalCompensation);
 		}
 
 		public interface IVisitableElement
@@ -58,7 +57,7 @@ namespace Pattern.Behavioural.Visitor
 
 			public void Visit(SalesEmployee e)
 			{
-				TotalCompensation += e.Salary + e.Comission;
+				TotalCompensation += e.Salary + e.Commission;
 			}
 		}
 		public class Employee
@@ -89,11 +88,11 @@ namespace Pattern.Behavioural.Visitor
 		}
 		public class SalesEmployee : Employee, IVisitableElement
 		{
-			public decimal Comission { get; set; }
+			public decimal Commission { get; set; }
 
 			public SalesEmployee(string name, decimal salary, decimal comission) : base(name, salary)
 			{
-				Comission = comission;
+				Commission = comission;
 			}
 			public void Accept(IVisitor visitor)
 			{

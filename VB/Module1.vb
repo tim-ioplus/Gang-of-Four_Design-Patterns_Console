@@ -30,6 +30,7 @@ Module Module1
 		'GoTo _37state
 		'GoTo _38strategy
 		'GoTo _39template
+		GoTo _310visitor
 
 		'
 		'1. Erzeugungsmuster
@@ -143,6 +144,10 @@ _39template:
 		templatePatternRunner.Run()
 		GoTo endoffile
 
+_310visitor:
+		Dim visitorPatternRunner As New VisitorPatternRunner()
+		visitorPatternRunner.Run()
+		GoTo endoffile
 
 		'
 		' End oF File
