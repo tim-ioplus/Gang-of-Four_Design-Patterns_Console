@@ -16,7 +16,7 @@
 
 		For Each strategy As IStrategy In strategies
 			strategy.Execute()
-			Console.WriteLine(strategy.Name + ": " + strategy.GetOutout())
+			Console.WriteLine(strategy.Name + ": " + strategy.GetOutput())
 		Next
 
 	End Sub
