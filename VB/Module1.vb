@@ -5,166 +5,157 @@ Module Module1
 
 	Sub Main()
 
+		' Erzeugungsmuster
+		GoTo _11singleton
+		'GoTo _12factory
+		'GoTo _13prototype
+		'GoTo _14builder
+
+		' Strukturmuster
+		'GoTo _21adapter
+		'GoTo _22bridge
+		'GoTo _23composite
+		'GoTo _24decorator
+		'GoTo _25facade
+		'GoTo _26flyweight
+		'GoTo _27proxy
+
+		'Verhaltensmuster
+		'GoTo _31chainOfResponsibility
+		'GoTo _32command
+		'GoTo _33iterator
+		'GoTo _34mediator
+		'GoTo _35memento
+		'GoTo _36observer
+		'GoTo _37state
+		'GoTo _38strategy
+		'GoTo _39template
+		'GoTo _310visitor
+
 		'
 		'1. Erzeugungsmuster
+		'
 
-		'Dim singletonPatternRunner As New SingletonPatternRunner()
-		'singletonPatternRunner.Run()
+_11singleton:
+		Dim singletonPatternRunner As New SingletonPatternRunner()
+		singletonPatternRunner.Run()
+		GoTo endoffile
 
-		'Dim factoryPatternRunner As New FactoryPatternRunner()
-		'factoryPatternRunner.Run()
+_12factory:
+		Dim factoryPatternRunner As New FactoryPatternRunner()
+		factoryPatternRunner.Run()
+		GoTo endoffile
 
-		'Dim prototypePatternRunner As New PrototypePatternRunner()
-		'prototypePatternRunner.Run()
+_13prototype:
+		Dim prototypePatternRunner As New PrototypePatternRunner()
+		prototypePatternRunner.Run()
+		GoTo endoffile
 
-		'Dim builderPatternRunner As New BuilderPatternRunner()
-		'builderPatternRunner.Run()
+_14builder:
+		Dim builderPatternRunner As New BuilderPatternRunner()
+		builderPatternRunner.Run()
+		GoTo endoffile
 
 		'
 		'2. Strukturmuster
-
-		'//
-		'// 2.1 Adapter Pattern
-		'//
-		'// Möglichkeit um neue Funktionen an bestehende Abhängigkeiten zu implementieren und im client code weiterhin
-		'// die alte Klasse zu verwenden.
-		'// Die Adapterklasse leitet sich von Basisklasse *und* einem neuem Interface ab und stellt gleiche Api zur Verfügung
-		'// wie die Basisklasse.
-		'// 
 		'
-		'Dim adapterPatternRunner = New AdapterPatternRunner
-		'adapterPatternRunner.Run()
 
-		'2.2 Bridge
-		'//
-		'// 2.2 Bridge
-		'//
-		'// Ein Objekt stellt Funktionen zur Verfügung indem es unterschiedliche Varianten eines anderen Objekts 
-		'// aufnehmen kann auf das es angewiesen ist.
-		'// zb beim Export oder Konvertieren unterschiedlicher Geschäftsobjekte in unterschiedliche Formate.
-		'//
-		'
+_21adapter:
+		Dim adapterPatternRunner = New AdapterPatternRunner
+		adapterPatternRunner.Run()
+		GoTo endoffile
+
+_22bridge:
 		Dim bridgePatternRunner = New BridgePatternRunner
 		bridgePatternRunner.Run()
+		GoTo endoffile
 
-		'2.3 Composite
-		'//
-		'// 2.3 Composite
-		'// 
-		'// Ermöglicht eine Menge von Einzelobjekten und deren Untermenge gleich zu behandeln um so gemeinsame Eigenschaften
-		'// leichter und übersichtlicher zu verarbeiten
-		'// zb. unterschiedliche einzelne Bauteile eines Produktes
-		'
-		'Dim compositePatternRunner = New CompositePatternRunner
-		'compositePatternRunner.Run()
+_23composite:
+		Dim compositePatternRunner = New CompositePatternRunner
+		compositePatternRunner.Run()
+		GoTo endoffile
 
+_24decorator:
+		Dim decoratorpatternRunner = New DecoratorPatternRunner
+		decoratorpatternRunner.Run()
+		GoTo endoffile
 
-		'2.4 Decorator		
-		'//
-		'// 2.4 Decorator
-		'// Ermöglicht das Verhalten eines Objekts zu verändern ohne die ursprüngliche Implementieurng zu ändern
-		'// Ermöglicht weiteres Verhalten um die Kernfunktion "herum-zu-wrappen", zB:
-		'// 1. [Api aufrufen] => 2. [[Api aufrufen], [Ergebnis Loggen]] => 3. [[Api Aufrufen], [Laufzeit loggen]]
-		'//
-		'Dim decoratorpatternRunner = New DecoratorPatternRunner
-		'decoratorpatternRunner.Run()
+_25facade:
+		Dim facadePatternRunner = New FacadePatternRunner
+		facadePatternRunner.Run()
+		GoTo endoffile
 
-		'2.5 Facade
-		'//
-		'// 2.5 Facade
-		'// ermöglicht ein Subsystem zu definieren mit klar abgegrenzten Verantwortlichkeiten und Schnittstellen.
-		'// Abhängigkeiten können dann innerhalb des Subsystems weggekapselt werden ohne
-		'// das der aufrufende Code (Client) darauf achten müsste.
-		'// zB. um redundante oder mehrfach Datenhaltung abzukapseln
-		'//
-		'Dim facadePatternRunner = New FacadePatternRunner
-		'facadePatternRunner.Run()
-
-		'
-		'Flyweight
-		'//
-		'// 2.7 Flyweight
-		'// Wenn eine Menge ähnlicher oder gleicher Objekte die gleichen Eigenschaften hat können sie sich mit dem Flyweight Pattern
-		'// Daten teilen um den gesamten Speicherverbrauch zu reduzieren
-		'// 
-		'// ZB einzelzeichen in einem Texteditor: jedes Zeichen hat eine Schriftart, Farbe, Stil, Größe
-		'//
+_26flyweight:
 		Dim flyweightPatternRunner = New FlyweightPatternRunner
 		flyweightPatternRunner.Run()
+		GoTo endoffile
 
-		'
-		'Proxy
+_27proxy:
 		Dim proxyPatternRunner = New ProxyPatternRunner
 		proxyPatternRunner.Run()
+		GoTo endoffile
 
 		'
 		' 3. Verhaltensmuster 
-
-		'Dim chainOfResponsibilityPatternRunner As New ChainOfResponsibilityPatternRunner()
-		'chainOfResponsibilityPatternRunner.Run()
-
-		' 3.2 Command
-		' Einzelne atomare operationen aus den zustand eines objektes ausführen und bei Bedarf
-		' wieder rückggängig machen zu können, transaktionsartig
-		'Dim commandPatternRunner As New CommandPatternRunner
-		'CommandPatternRunner.Run()
-
-		'3.3 Iterator
 		'
-		'Dim iteratorPatternRunner As New IteratorPatternRunner()
-		'IteratorPatternRunner.Run()
 
+_31chainOfResponsibility:
+		Dim chainOfResponsibilityPatternRunner As New ChainOfResponsibilityPatternRunner()
+		chainOfResponsibilityPatternRunner.Run()
+		GoTo endoffile
 
-		' 3.4 Mediator 
-		' 
-		' Struktur um Objekte miteinander interagieren, kommunizieren zu lassen ohne sie direkt aufzurufen
-		' - Kommunikation zwischen GUI Elemnten um Eingaben und Änderungen der Zustände zu kommunizieren
-		' - Chatsysteme
-		'
-		'Dim mediatorPatternRunner = New MediatorPatternRunner
-		'mediatorPatternRunner.Run()
+_32command:
+		Dim commandPatternRunner As New CommandPatternRunner()
+		commandPatternRunner.Run()
+		GoTo endoffile
 
+_33iterator:
+		Dim iteratorPatternRunner As New IteratorPatternRunner()
+		iteratorPatternRunner.Run()
+		GoTo endoffile
 
-		'// 3.5 Memento
-		'//
-		'// Zwischenspeichern eines Objektzustands um darauf folgende Änderungen wieder rückgängig machen zu können.
-		'// - Texteditor > Text, Formatierungen
-		'// - Grafikbearbeitung > Objekte, Pixel, Farbe
-		'//
+_34mediator:
+		Dim mediatorPatternRunner = New MediatorPatternRunner()
+		mediatorPatternRunner.Run()
+		GoTo endoffile
 
-		'Dim mementoPatternRunner = New MementoPatternRunner
-		'mementoPatternRunner.Run()
+_35memento:
+		Dim mementoPatternRunner = New MementoPatternRunner()
+		mementoPatternRunner.Run()
+		GoTo endoffile
 
-		'3.6 Observer
-		' 
-		' ein objekt kann anderen Objekten seine Veränderungen mitteilen diese können darauf reagieren.
-		' - Ereignisse in gui Elementen
-		' -- Workflow schritte wenn zb. die Oberflächen des nächsten (n+1)-ten Schritts von der Auswahl im aktuellen n-ten Schritt abhängen 
-		' - Publish und Subscribe Dienste 
-		' -- Handelsplatformen die auf ereignisse zb preisänderungen reagieren
-		' - Dienst um Fehlermeldungen einzusammeln und And die richtigen empfänger zu verteilen
-		'
-		'Dim observerPatternRunner = New ObserverPatternRunner
-		'observerPatternRunner.Run()
+_36observer:
+		Dim observerPatternRunner = New ObserverPatternRunner()
+		observerPatternRunner.Run()
+		GoTo endoffile
 
-		'3.7 State 
-		'Dim statePatternRunner As New StatePatternRunner()
-		'StatePatternRunner.Run()
+_37state:
+		Dim statePatternRunner As New StatePatternRunner()
+		statePatternRunner.Run()
+		GoTo endoffile
 
-		' 3.8 Strategy
-		'Dim strategyPatternRunner As New StrategyPatternRunner()
-		'strategyPatternRunner.Run()
+_38strategy:
+		Dim strategyPatternRunner As New StrategyPatternRunner()
+		strategyPatternRunner.Run()
+		GoTo endoffile
 
-		' 3.9 Template
+_39template:
+		Dim templatePatternRunner As New TemplatePatternRunner()
+		templatePatternRunner.Run()
+		GoTo endoffile
 
-
-		' 3.10 Visitor
+_310visitor:
+		Dim visitorPatternRunner As New VisitorPatternRunner()
+		visitorPatternRunner.Run()
+		GoTo endoffile
 
 
 		'
+		' End oF File
 		'
-		'
-		Dim secs As Integer = 15000
+
+endoffile:
+		Dim secs As Integer = 20000
 		Console.WriteLine($"exit in {secs / 1000} secs")
 		Thread.Sleep(secs)
 
