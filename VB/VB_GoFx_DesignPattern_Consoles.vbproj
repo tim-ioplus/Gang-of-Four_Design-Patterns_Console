@@ -100,6 +100,8 @@
     <Compile Include="Behavioural\Strategy\IStrategy.vb" />
     <Compile Include="Behavioural\Strategy\StrategyBase.vb" />
     <Compile Include="Behavioural\Strategy\StrategyPatternRunner.vb" />
+    <Compile Include="Behavioural\Template\TemplatePatternRunner.vb" />
+    <Compile Include="Behavioural\Visitor\VisitorPatternRunner.vb" />
     <Compile Include="Creational\Builder\BuilderPatternRunner.vb" />
     <Compile Include="Creational\Factory\Factory.vb" />
     <Compile Include="Creational\Factory\FactoryPatternRunner.vb" />
