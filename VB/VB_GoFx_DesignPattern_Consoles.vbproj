@@ -115,6 +115,7 @@
     <Compile Include="Structural\Composite\CompositePatternRunner.vb" />
     <Compile Include="Structural\Decorator\DecoratorPatternRunner.vb" />
     <Compile Include="Structural\Facade\FacadePatternRunner.vb" />
+    <Compile Include="Structural\Flyweight\FlyweightPatternRunner.vb" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

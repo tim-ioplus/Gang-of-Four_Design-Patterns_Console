@@ -1,4 +1,5 @@
-﻿Imports System.Threading
+﻿Imports System.Security
+Imports System.Threading
 
 Module Module1
 
@@ -43,8 +44,8 @@ Module Module1
 		'// zb beim Export oder Konvertieren unterschiedlicher Geschäftsobjekte in unterschiedliche Formate.
 		'//
 		'
-		'Dim bridgePatternRunner = New BridgePatternRunner
-		'bridgePatternRunner.Run()
+		Dim bridgePatternRunner = New BridgePatternRunner
+		bridgePatternRunner.Run()
 
 		'2.3 Composite
 		'//
@@ -76,11 +77,22 @@ Module Module1
 		'// das der aufrufende Code (Client) darauf achten müsste.
 		'// zB. um redundante oder mehrfach Datenhaltung abzukapseln
 		'//
-		Dim facadePatternRunner = New FacadePatternRunner
-		facadePatternRunner.Run()
+		'Dim facadePatternRunner = New FacadePatternRunner
+		'facadePatternRunner.Run()
 
-
+		'
 		'Flyweight
+		'//
+		'// 2.7 Flyweight
+		'// Wenn eine Menge ähnlicher oder gleicher Objekte die gleichen Eigenschaften hat können sie sich mit dem Flyweight Pattern
+		'// Daten teilen um den gesamten Speicherverbrauch zu reduzieren
+		'// 
+		'// ZB einzelzeichen in einem Texteditor: jedes Zeichen hat eine Schriftart, Farbe, Stil, Größe
+		'//
+		Dim flyweightPatternRunner = New FlyweightPatternRunner
+		flyweightPatternRunner.Run()
+
+		'
 		'Proxy
 
 
