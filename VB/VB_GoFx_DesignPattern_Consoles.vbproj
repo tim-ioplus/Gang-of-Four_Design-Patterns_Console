@@ -116,6 +116,7 @@
     <Compile Include="Structural\Decorator\DecoratorPatternRunner.vb" />
     <Compile Include="Structural\Facade\FacadePatternRunner.vb" />
     <Compile Include="Structural\Flyweight\FlyweightPatternRunner.vb" />
+    <Compile Include="Structural\Proxy\ProxyPatternRunner.vb" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -94,7 +94,8 @@ Module Module1
 
 		'
 		'Proxy
-
+		Dim proxyPatternRunner = New ProxyPatternRunner
+		proxyPatternRunner.Run()
 
 		'
 		' 3. Verhaltensmuster 
